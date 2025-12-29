@@ -1,26 +1,122 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: radial-gradient(circle at top, #111827, #020617);
+  color: #e5e7eb;
+}
+
+.hero {
+  padding: 120px 20px;
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #94a3b8;
+}
+
+.hero p {
+  margin-top: 25px;
+  line-height: 1.6;
+  color: #cbd5f5;
+}
+
+.hero-actions {
+  margin-top: 40px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: white;
+  color: black;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-outline {
+  border: 1px solid #94a3b8;
+  padding: 12px 22px;
+  border-radius: 6px;
+  color: #e5e7eb;
+  text-decoration: none;
+}
+
+.section {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.info-list li {
+  margin-bottom: 10px;
+}
+
+.skill {
+  margin-bottom: 15px;
+}
+
+.skill span {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.bar {
+  background: #1e293b;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bar div {
+  height: 10px;
+  background: linear-gradient(90deg, #38bdf8, #2563eb);
+}
+
+.job span {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.job ul {
+  margin-top: 15px;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #38bdf8;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px;
+  color: #64748b;
 }

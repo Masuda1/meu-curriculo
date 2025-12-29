@@ -1,65 +1,114 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+    <>
+      {/* HERO */}
+      <header className="hero">
+        <h1>Daniel Soares Masuda</h1>
+        <h2>Analista de Infraestrutura e Redes | DevOps em formação</h2>
+        <p>
+          Analista de Infraestrutura e Redes, estudante de Ciência da Computação,
+          com sólida experiência em segurança de rede, gerenciamento de
+          firewalls, servidores e monitoramento de ambientes críticos.
+        </p>
+
+        <div className="hero-actions">
+          <a className="btn-primary" href="/cv-daniel-masuda.pdf" download>
+            Download CV
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+          <a className="btn-outline" href="#contato">
+            Contato
           </a>
         </div>
-      </main>
-    </div>
+      </header>
+
+      {/* SOBRE */}
+      <section className="section">
+        <h3>Sobre mim</h3>
+        <p>
+          Atuo diretamente na proteção da matriz e filiais por meio de soluções
+          avançadas de VPN e Firewall SonicWall, além do gerenciamento de
+          servidores em nuvem.
+          <br /><br />
+          Possuo forte vivência em infraestrutura de redes, wireless corporativo,
+          monitoramento com Zabbix e Grafana e administração do Microsoft 365.
+          Atualmente, meu foco principal está em DevOps, redes e segurança da
+          informação.
+        </p>
+      </section>
+
+      {/* DADOS */}
+      <section className="section card">
+        <h3>Informações pessoais</h3>
+        <ul className="info-list">
+          <li><strong>Idade:</strong> 26 anos</li>
+          <li><strong>Cidade:</strong> Goiânia – GO</li>
+          <li><strong>Email:</strong> danielmasuda12@hotmail.com</li>
+          <li><strong>Website:</strong> m4sud4.com.br</li>
+          <li><strong>Nacionalidade:</strong> Brasileiro (descendente de japonês)</li>
+        </ul>
+      </section>
+
+      {/* SKILLS */}
+      <section className="section">
+        <h3>Skills Técnicas</h3>
+
+        {[
+          ["Linux", 85],
+          ["Windows Server", 80],
+          ["Firewall SonicWall", 90],
+          ["Redes TCP/IP", 85],
+          ["Zabbix", 90],
+          ["Grafana", 85],
+          ["VPN", 85],
+          ["Docker", 70],
+          ["Cloud / VPS", 75],
+          ["Node.js", 65],
+        ].map(([skill, value]) => (
+          <div key={skill} className="skill">
+            <span>{skill}</span>
+            <div className="bar">
+              <div style={{ width: `${value}%` }} />
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* EXPERIÊNCIA */}
+      <section className="section">
+        <h3>Experiência Profissional</h3>
+
+        <div className="job">
+          <h4>Farmácia Artesanal — Analista de TI Pleno</h4>
+          <span>Dez/2023 – Atual | Goiânia – GO</span>
+
+          <ul>
+            <li>Gerenciamento de Firewall SonicWall</li>
+            <li>Implementação de VPNs Site-to-Site e Client</li>
+            <li>Monitoramento com Zabbix e Grafana</li>
+            <li>Administração de servidores em nuvem</li>
+            <li>Infraestrutura de redes e wireless corporativo (UniFi)</li>
+            <li>Administração do Microsoft 365</li>
+            <li>Documentação técnica e suporte à decisão</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* CONTATO */}
+      <section id="contato" className="section card">
+        <h3>Contato</h3>
+
+        <div className="socials">
+          <a href="https://github.com/Masuda1" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/daniel-masuda-4a550521b/" target="_blank">LinkedIn</a>
+          <a href="https://www.instagram.com/danielmasuda_/" target="_blank">Instagram</a>
+          <a href="https://wa.me/5562982070867" target="_blank">WhatsApp</a>
+          <a href="mailto:danielmasuda12@hotmail.com">Email</a>
+        </div>
+      </section>
+
+      <footer className="footer">
+        © 2025 — Daniel Soares Masuda
+      </footer>
+    </>
   );
 }
